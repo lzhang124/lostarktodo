@@ -1,2 +1,2 @@
-# lostarktodo
-Todo list for Lost Ark
+# Lost Ark Todo List
+Default configuration set in `data.js`.
