@@ -1,6 +1,6 @@
 body {
   background-color: rgb(20, 20, 20);
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 16px;
 }
 
@@ -11,24 +11,52 @@ body {
   z-index: 2;
 }
 
-#body .global-buttons>button {
-  display: block;
+#body .global-buttons>.button {
+  display: flex !important;
   margin: 10px;
+  align-items: center;
+}
+
+#body .global-buttons button {
+  margin: 0;
   color: rgb(100, 100, 100) !important;
   box-shadow: 0 0 0 2px rgb(100, 100, 100) inset !important;
 }
 
-#body .global-buttons>button.active, #body .global-buttons>button:hover {
+#body .global-buttons button.active,
+#body .global-buttons button:hover {
   color: rgb(255, 255, 255) !important;
   box-shadow: 0 0 0 2px rgb(255, 255, 255) inset !important;
 }
 
-#body .popup {
-  border: 2px solid white;
+#body .popup-button {
+  position: absolute;
+  left: 100%;
 }
 
-#body .popup>.error {
-  border-bottom: 2px solid red;
+#body .popup {
+  display: flex !important;
+  position: absolute;
+  left: 100%;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  background-color: rgb(20, 20, 20);
+  align-items: center;
+  gap: .5rem;
+  white-space: nowrap;
+}
+
+#body .popup a {
+  display: inline-flex;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+
+#body .popup.error {
+  border: 2px solid #d65e5e;
 }
 
 #body .table-container {
@@ -52,20 +80,35 @@ body {
   z-index: 1;
 }
 
+#body .column-title>.column {
+  padding: 0 5px;
+}
+
+#body .column-title input {
+  width: 100%;
+  border-bottom: 1px solid rgb(255, 255, 255) !important;
+  padding-bottom: 3px !important;
+  margin-bottom: -3px;
+}
+
 #body .row-title {
   flex: 0 0 200px;
+}
+
+#body .centered input {
+  text-align: center;
 }
 
 #body .task-icon {
   height: 2rem;
   margin-right: 5px;
-  vertical-align: -.5rem;
+  vertical-align: -0.5rem;
 }
 
 #body .check {
   height: 2rem;
   width: 2rem;
-  padding: .25rem 0;
+  padding: 0.25rem 0;
   margin: 0 5px;
   vertical-align: middle;
   background-color: transparent;
@@ -82,7 +125,7 @@ body {
 
 #body .rest {
   position: relative;
-  top: .6rem;
+  top: 0.6rem;
   height: 0;
   width: fit-content;
   padding: 5px 0;
@@ -98,7 +141,7 @@ body {
   position: relative;
   top: -1.2rem;
   height: 1px;
-  width: .6rem;
+  width: 0.6rem;
 }
 
 #body .rest-bar:nth-child(odd) {

@@ -2,7 +2,7 @@
   "name": "lost-ark-todo",
   "version": "1.0.0",
   "scripts": {
-    "build": "babel app.jsx --watch --out-file app.js --presets @babel/preset-react"
+    "dev": "babel app.jsx --watch --out-file app.js --presets @babel/preset-react"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
