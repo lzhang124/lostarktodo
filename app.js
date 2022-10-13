@@ -218,8 +218,8 @@ const GlobalButtons = ({
     inverted: true,
     placeholder: "Name",
     onKeyDown: e => {
-      if (e.key === 'Enter') {
-        e.target.value !== '' && addCharacter(e.target.value);
+      if (e.key === 'Enter' && e.target.value !== '') {
+        addCharacter(e.target.value);
         setNewCharOpen(false);
       }
       e.key === 'Escape' && setNewCharOpen(false);
