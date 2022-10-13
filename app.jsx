@@ -48,7 +48,10 @@ const incrementDay = (data, day) => {
       return {
         ...c,
         daily: Object.fromEntries(
-          Object.entries(c.daily ?? {}).map(([key, { checked, rest, ...char }]) => {
+          Object.entries({
+            ...Object.fromEntries(data.daily.filter((config) => config.restable).map((config) => [config.key, {rest: 0}])),
+            ...c.daily,
+          }).map(([key, { checked, rest, ...char }]) => {
             const daily = data.daily.find((config) => config.key === key)
             return [
               key,
@@ -606,7 +609,7 @@ const App = () => {
     testDay()
     const timer = setTimeout(() => {
       testDay()
-    }, 1000 * 60 * 60)
+    }, 1000)
     return () => {
       clearTimeout(timer)
     }
