@@ -435,7 +435,7 @@ const DataRow = ({
                   return c[type]?.[config.key]?.todo === 'rested'
                     ? editing
                       ? true
-                      : (c[type]?.[config.key]?.rest ?? 0) < 4
+                      : (c[type]?.[config.key]?.rest ?? 0) < 2 * config.number
                     : c[type]?.[config.key]?.todo < j + 1
                 })}
                 restable={config.restable}
