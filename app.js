@@ -431,7 +431,7 @@ const DataRow = ({
     color: color,
     checked: c[type]?.[config.key]?.checked ?? [...Array(numCheckboxes).fill(false)],
     disabled: [...Array(numCheckboxes)].map((_, j) => {
-      return c[type]?.[config.key]?.todo === 'rested' ? editing ? true : (c[type]?.[config.key]?.rest ?? 0) < 2 * (j + 1) : c[type]?.[config.key]?.todo < j + 1;
+      return c[type]?.[config.key]?.todo === 'rested' ? editing ? true : (c[type]?.[config.key]?.rest ?? 0) < 2 * config.number : c[type]?.[config.key]?.todo < j + 1;
     }),
     restable: config.restable,
     rest: c[type]?.[config.key]?.rest ?? 0,
