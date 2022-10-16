@@ -37,7 +37,7 @@ const calculateRest = (rest, checked) => {
 
 const calculateNewRest = (rest, checked, total) => {
   const numChecked = checked.filter(Boolean).length
-  return Math.min(rest - Math.min(Math.floor(rest / 2), numChecked * 2) + total - numChecked, 10)
+  return Math.min(rest - Math.min(Math.floor(rest / 2), numChecked) * 2 + total - numChecked, 10)
 }
 
 const incrementDay = (data, day) => {
