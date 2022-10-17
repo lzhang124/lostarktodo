@@ -576,11 +576,11 @@ const App = () => {
   }, [data]);
   useEffect(() => {
     testDay();
-    const timer = setTimeout(() => {
+    const interval = setInterval(() => {
       testDay();
     }, 1000);
     return () => {
-      clearTimeout(timer);
+      clearInterval(interval);
     };
   }, [testDay]);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(GlobalButtons, {

@@ -607,11 +607,11 @@ const App = () => {
 
   useEffect(() => {
     testDay()
-    const timer = setTimeout(() => {
+    const interval = setInterval(() => {
       testDay()
     }, 1000)
     return () => {
-      clearTimeout(timer)
+      clearInterval(interval)
     }
   }, [testDay])
 
